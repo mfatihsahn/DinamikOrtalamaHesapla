@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@drawable/bg"
+
+
+   >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <AutoCompleteTextView
+            android:id="@+id/etDersAd"
+            android:layout_width="278dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@android:color/transparent"
+            android:textColorHint="@android:color/white"
+            android:popupBackground="@color/colorAccent"
+            android:hint="Ders Adını Giriniz"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spnDersKredi"
+            android:layout_width="149dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="8dp"
+            android:entries="@array/krediler"
+            app:layout_constraintBottom_toBottomOf="@+id/spnHarfNotu"
+            app:layout_constraintTop_toBottomOf="@+id/etDersAd"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <Spinner
+            android:id="@+id/spnHarfNotu"
+            android:layout_width="108dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/colorAccent"
+            android:entries="@array/tumDerslerinBilgileri"
+            android:popupBackground="@color/colorAccent"
+            app:layout_constraintStart_toEndOf="@+id/spnDersKredi"
+            app:layout_constraintTop_toBottomOf="@+id/etDersAd" />
+
+        <Button
+            android:id="@+id/btnDersSec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/etDersAd"
+            android:background="@drawable/btnadd"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorAccent">
+    </View>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/rootLayout"/>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnOrtalamaHesapla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="ortalamaHesapla"
+        android:background="@drawable/hesapla_btn"
+        android:text="Hesapla" />
+</LinearLayout>
